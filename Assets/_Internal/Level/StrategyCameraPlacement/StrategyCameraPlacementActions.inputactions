@@ -1,0 +1,34 @@
+{
+    "name": "StrategyCameraPlacementActions",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "c227db7e-b46a-4dbc-b2d7-8b77d6b3bab8",
+            "actions": [
+                {
+                    "name": "OnPlace",
+                    "type": "Button",
+                    "id": "65f1263d-8951-4c25-8b66-8b56093f3c66",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "406cb02f-e9bb-4abb-9410-64619c4b80e2",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnPlace",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
