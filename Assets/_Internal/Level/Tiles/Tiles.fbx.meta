@@ -3,7 +3,42 @@ guid: 956577b97e4e4f2418f71a0baecac636
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grassy and Muddy Land
+    second: {fileID: 2100000, guid: 193b43c384b84c3498279f6174179c50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaf_01
+    second: {fileID: 2100000, guid: 4142054a86dded249bdf1c543fb4d052, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Petiole_01
+    second: {fileID: 2100000, guid: 696b6063c41a7314fa5d45bb1175af2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: STONE
+    second: {fileID: 2100000, guid: cfd29e47d81bcea48aea47c26e6630de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone_Color
+    second: {fileID: 2100000, guid: f864de19d3c08044eb880f266dceb186, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trunk_01
+    second: {fileID: 2100000, guid: 3560a9b402b094f41b3db1e6a09977fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trasvsa
+    second: {fileID: 2100000, guid: d282c044f0e7d1347b15f5790729d8d1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
