@@ -19409,7 +19409,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 19, y: 1, z: 19}
-  m_Center: {x: 9.5, y: 0, z: 8.5}
+  m_Center: {x: 9.5, y: 0.5, z: 8.5}
 --- !u!4 &1483194089 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6447623317607490908, guid: 5f06538e75237444da41b067489a69c6,
