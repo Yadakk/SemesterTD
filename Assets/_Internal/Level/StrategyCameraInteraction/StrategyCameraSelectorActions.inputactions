@@ -6,7 +6,7 @@
             "id": "fac7ebe6-be9f-48ad-b572-c24a07912928",
             "actions": [
                 {
-                    "name": "OnInteract",
+                    "name": "OnSelect",
                     "type": "Button",
                     "id": "0770d5ff-ac6b-436c-abb9-75793c18f8b0",
                     "expectedControlType": "Button",
@@ -23,7 +23,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "OnInteract",
+                    "action": "OnSelect",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
