@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Road : MonoBehaviour, IInteractible
+public class Road : SelectableTile, IInteractible
 {
-    public void Interact()
-    {
-        Debug.Log("Road");
-    }
+
 }

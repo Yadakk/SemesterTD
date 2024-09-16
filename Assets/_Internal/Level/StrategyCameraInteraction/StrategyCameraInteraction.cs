@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInteraction : MonoBehaviour
+[RequireComponent(typeof(Camera))]
+public class StrategyCameraInteraction : MonoBehaviour
 {
-    [SerializeField] 
-    private float maxDistance = 5f;
-
-    private PlayerInteractionActions actions;
+    private StrategyCameraInteractionActions actions;
+    private Camera cam;
 
     private void Awake()
     {
         actions = new();
         actions.Main.OnInteract.started += OnInteractHandler;
+        cam = GetComponent<Camera>();
     }
 
     private void OnEnable()
@@ -28,6 +28,6 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnInteractHandler(InputAction.CallbackContext context)
     {
-        PlayerInteractionRaycaster.Raycast(maxDistance);
+        InteractionRaycaster.Raycast(cam.ScreenPointToRay(Input.mousePosition));
     }
 }

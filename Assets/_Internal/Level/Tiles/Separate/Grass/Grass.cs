@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grass : MonoBehaviour, IInteractible
+public class Grass : SelectableTile, IInteractible
 {
-    public void Interact()
-    {
-        Debug.Log("Grass");
-    }
+
 }

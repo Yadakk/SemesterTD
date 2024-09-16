@@ -2765,7 +2765,6 @@ GameObject:
   m_Component:
   - component: {fileID: 213699466}
   - component: {fileID: 213699470}
-  - component: {fileID: 213699472}
   - component: {fileID: 213699469}
   - component: {fileID: 213699468}
   - component: {fileID: 213699467}
@@ -2909,19 +2908,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &213699472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213699465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7d7b5606c68f774a8f98ec2a61ffae5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDistance: 3
 --- !u!1001 &214817023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9792,8 +9778,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 723811987}
+  - component: {fileID: 723811988}
   m_Layer: 0
-  m_Name: TileSelectorPosition
+  m_Name: SelectionOutline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9808,13 +9795,26 @@ Transform:
   m_GameObject: {fileID: 723811986}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 1.01, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1765790726}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &723811988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723811986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de850c183c33e6846a3be4114a3cdd8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionSize: {x: 1, y: 1}
 --- !u!4 &724827341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6447623317607490908, guid: 5f06538e75237444da41b067489a69c6,
@@ -22898,28 +22898,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1765790726}
-  - component: {fileID: 1765790724}
   - component: {fileID: 1765790725}
   m_Layer: 0
-  m_Name: TileSelector
+  m_Name: LineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1765790724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765790723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de850c183c33e6846a3be4114a3cdd8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellSize: {x: 1, y: 1}
 --- !u!120 &1765790725
 LineRenderer:
   serializedVersion: 2
@@ -22963,10 +22949,10 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0, y: 1.01, z: 0}
+  - {x: 0, y: 1.01, z: -1}
+  - {x: 1, y: 1.01, z: -1}
   - {x: 1, y: 1.01, z: 0}
-  - {x: 1, y: 1.01, z: 1}
-  - {x: 0, y: 1.01, z: 1}
+  - {x: 0, y: 1.01, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.1
@@ -23035,7 +23021,7 @@ Transform:
   m_GameObject: {fileID: 1765790723}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 1.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
