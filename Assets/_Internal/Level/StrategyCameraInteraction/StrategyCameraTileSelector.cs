@@ -32,7 +32,11 @@ public class StrategyCameraTileSelector : MonoBehaviour
     private void OnSelectHandler(InputAction.CallbackContext context)
     {
         var tile = ComponentRaycaster.Raycast<SelectableTile>(cam.ScreenPointToRay(Input.mousePosition));
-        if (tile == null) return;
+        if (tile == null)
+        {
+            outline.Deselect();
+            return;
+        }
 
         var tileRenderer = tile.GetComponent<Renderer>();
         Vector3 tileBounds = tileRenderer.bounds.extents;
