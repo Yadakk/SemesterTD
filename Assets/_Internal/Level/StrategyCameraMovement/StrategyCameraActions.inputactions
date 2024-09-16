@@ -1,0 +1,56 @@
+{
+    "name": "StrategyCameraActions",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "24863b4c-30e5-417c-bf67-ce562ed3acb6",
+            "actions": [
+                {
+                    "name": "OnPan",
+                    "type": "Button",
+                    "id": "387cc268-ebda-4e4a-bc5d-9b079b238d7d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "One Modifier",
+                    "id": "b2f6ce7c-d250-4c04-939a-a18099e5e616",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnPan",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "8b7a1fea-992d-4169-bc7c-dc73e4f7c65f",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnPan",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "c448fc76-b8bc-4af6-801c-159b28f90960",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OnPan",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
