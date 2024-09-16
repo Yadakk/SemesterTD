@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class StrategyCamera : MonoBehaviour
+public class StrategyCameraMovement : MonoBehaviour
 {
     [SerializeField]
     private float sensitivity = 0.01f;
 
-    private StrategyCameraActions actions;
+    private StrategyCameraMovementActions actions;
 
     private void Awake()
     {
