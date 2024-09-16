@@ -35,6 +35,6 @@ public class StrategyCamera : MonoBehaviour
         Vector2 delta = context.ReadValue<Vector2>();
 
         Vector3 transformDelta = horizontalRotation * new Vector3(delta.x, 0f, delta.y);
-        transform.position += transformDelta * sensitivity;
+        transform.position += -transformDelta * sensitivity;
     }
 }
