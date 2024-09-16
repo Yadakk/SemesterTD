@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] 
-    private float maxDistance;
+    private float maxDistance = 5f;
 
     private PlayerInteractionActions actions;
 

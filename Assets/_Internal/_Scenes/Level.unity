@@ -2765,6 +2765,7 @@ GameObject:
   m_Component:
   - component: {fileID: 213699466}
   - component: {fileID: 213699470}
+  - component: {fileID: 213699472}
   - component: {fileID: 213699469}
   - component: {fileID: 213699468}
   - component: {fileID: 213699467}
@@ -2908,6 +2909,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &213699472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213699465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d7b5606c68f774a8f98ec2a61ffae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 3
 --- !u!1001 &214817023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18919,8 +18933,8 @@ GameObject:
   - component: {fileID: 1477989324}
   - component: {fileID: 1477989323}
   - component: {fileID: 1477989325}
-  m_Layer: 0
-  m_Name: Tilemap
+  m_Layer: 2
+  m_Name: MapLayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
