@@ -30,6 +30,8 @@ public class UnitPathNode : MonoBehaviour
 
         foreach (UnitPathNode node in ConnectedNodes)
         {
+            if (node == null) continue;
+
             Gizmos.color = Color.magenta;
 
             Vector3 switchColorPoint = Vector3.MoveTowards(node.transform.position, transform.position, 0.4f) + Offset;

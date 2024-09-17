@@ -25,6 +25,7 @@ public class UnitPathBuilderWindow : EditorWindow
     }
 
     public GameObject SelectedGO => Selection.gameObjects[0];
+    public GameObject[] AllSelectedGOs => Selection.gameObjects;
 
     [MenuItem("Tools/Unit Path Builder")]
     public static void ShowExample()
@@ -71,22 +72,28 @@ public class UnitPathBuilderWindow : EditorWindow
 
     private void CreateButtonHandler()
     {
-        if (SelectedGO == null) return;
-        if (SelectedGO.TryGetComponent<UnitPathNode>(out var _)) return;
-        UnitPathBuilder.AddNode(SelectedGO);
+        foreach (var go in AllSelectedGOs)
+        {
+            if (go == null) continue;
+            if (go.TryGetComponent<UnitPathNode>(out var _)) continue;
+            UnitPathBuilder.AddNode(go);
+        }
     }
 
     private void RemoveButtonHandler()
     {
-        if (SelectedGO == null) return;
-        if (!SelectedGO.TryGetComponent<UnitPathNode>(out var node)) return;
-
-        if (node == SelectedNode)
+        foreach(var go in AllSelectedGOs)
         {
-            SelectedNode = null;
-        }
+            if (go == null) continue;
+            if (!go.TryGetComponent<UnitPathNode>(out var node)) continue;
 
-        UnitPathBuilder.RemoveNode(node);
+            if (node == SelectedNode)
+            {
+                SelectedNode = null;
+            }
+
+            UnitPathBuilder.RemoveNode(node);
+        }
     }
 
     private void SelectButtonHandler()
@@ -102,11 +109,14 @@ public class UnitPathBuilderWindow : EditorWindow
 
     private void ConnectToSelectedButtonHandler()
     {
-        if (SelectedGO == null) return;
-        if (!SelectedGO.TryGetComponent<UnitPathNode>(out var node)) return;
-        if (SelectedNode == null) return;
+        foreach (var go in AllSelectedGOs)
+        {
+            if (go == null) continue;
+            if (!go.TryGetComponent<UnitPathNode>(out var node)) continue;
+            if (SelectedNode == null) continue;
 
-        SelectedNode.ConnectTo(node);
+            SelectedNode.ConnectTo(node);
+        }
     }
 
     private void SetSelectedLabelText(string text)
