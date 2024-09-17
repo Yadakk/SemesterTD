@@ -14,10 +14,10 @@ public class TilePlacer : MonoBehaviour
         selector = GetComponent<StrategyCameraTileSelector>();
     }
 
-    public void Place(GameObject prefab)
+    public void Place(Placeable placeable)
     {
         if (selector.SelectedTile is not PlaceableTile) return;
         var placeableTile = selector.SelectedTile as PlaceableTile;
-        placeableTile.TryPlace(prefab);
+        placeableTile.TryPlace(placeable);
     }
 }

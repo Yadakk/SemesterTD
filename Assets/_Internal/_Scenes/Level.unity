@@ -22946,7 +22946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7607270a3056ae409e4e475c3faa8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 10
+  amount: 150
 --- !u!1001 &1670464341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29908,12 +29908,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 2977574475785318742, guid: 60059e1a43c0a2945b4a53a2b490a6a7,
-        type: 3}
+      objectReference: {fileID: 11400000, guid: 580c0e11506f0ae49a8fd4da0c447eb2,
+        type: 2}
     - target: {fileID: 4358853121159024804, guid: ceebf1fadfe71184a83137f7e74afb20,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: Placeable, Internal
       objectReference: {fileID: 0}
     - target: {fileID: 5057718785702521417, guid: ceebf1fadfe71184a83137f7e74afb20,
         type: 3}

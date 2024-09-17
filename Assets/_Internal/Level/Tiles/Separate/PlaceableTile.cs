@@ -6,7 +6,7 @@ public class PlaceableTile : SelectableTile
 {
     private Renderer tileRenderer;
 
-    private GameObject currentPlaceable;
+    private GameObject occupyingPlaceable;
 
     public Vector3 TileHeight => new(0f, tileRenderer.bounds.extents.y, 0f);
 
@@ -15,18 +15,19 @@ public class PlaceableTile : SelectableTile
         tileRenderer = GetComponent<Renderer>();
     }
 
-    public bool TryPlace(GameObject prefab)
+    public bool TryPlace(Placeable placeable)
     {
-        if (currentPlaceable != null) return false;
+        if (occupyingPlaceable != null) return false;
+        if (!placeable.TryBuy()) return false;
 
-        var placeable = Instantiate(prefab, transform.position, transform.rotation, transform);
-        var renderer = placeable.GetComponent<Renderer>();
+        var placedGO = Instantiate(placeable.Prefab, transform.position, transform.rotation, transform);
+        var renderer = placedGO.GetComponent<Renderer>();
         var extents = renderer.bounds.extents;
 
-        placeable.transform.position += new Vector3(0f, extents.y, 0f);
-        placeable.transform.position += TileHeight;
+        placedGO.transform.position += new Vector3(0f, extents.y, 0f);
+        placedGO.transform.position += TileHeight;
 
-        currentPlaceable = placeable;
+        occupyingPlaceable = placedGO;
         return true;
     }
 }

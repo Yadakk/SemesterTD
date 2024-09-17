@@ -11,6 +11,8 @@ public class NutsAndBolts : MonoBehaviour, ICounterOutput
 
     public event Action<string> OnOutput;
 
+    public static NutsAndBolts Instance { get; private set; }
+
     public int Amount
     {
         get => amount;
@@ -19,6 +21,11 @@ public class NutsAndBolts : MonoBehaviour, ICounterOutput
             if (value != amount) OnOutput.Invoke(value.ToString());
             amount = value;
         }
+    }
+
+    private void Awake()
+    {
+        Instance = this;
     }
 
     private void Start()
