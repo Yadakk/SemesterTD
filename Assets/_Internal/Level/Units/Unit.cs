@@ -46,6 +46,13 @@ public class Unit : MonoBehaviour
 
     private UnitPathNode GetNextNode(UnitPathNode node)
     {
+        if (node.ConnectedNodes.Count == 0)
+        {
+            var towerLocation = node.GetComponent<TowerLocation>();
+            towerLocation.TowerHealth.Health -= 1f;
+            Destroy(gameObject);
+        }
+
         return node.ConnectedNodes[Random.Range(0, node.ConnectedNodes.Count)];
     }
 }

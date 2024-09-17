@@ -7636,6 +7636,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1620314338}
+    - targetCorrespondingSourceObject: {fileID: 4245291610896726674, guid: 0f8432617a725f54482dbfcaee429a9b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1620314343}
   m_SourcePrefab: {fileID: 100100000, guid: 0f8432617a725f54482dbfcaee429a9b, type: 3}
 --- !u!4 &520293991 stripped
 Transform:
@@ -22621,6 +22625,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedNodes: []
+--- !u!114 &1620314343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275855802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35801371def50d74c8317643dcc1754d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 5645439058771079134, guid: 1169deb83a3e3af4d990e49b21699eb7,
+    type: 3}
 --- !u!4 &1622506639 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6447623317607490908, guid: 5f06538e75237444da41b067489a69c6,
