@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private bool rotateFlag;
 
     //ComponentReferences
+    private Camera cam;
     private Rigidbody rb;
 
     //Ungrouped
@@ -40,8 +41,9 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        cam = GetComponent<Camera>();
 
-        limitedRotation = new(Camera.main.transform, Vector3.left, -90f, 90f);
+        limitedRotation = new(cam.transform, Vector3.left, -90f, 90f);
 
         actions = new();
         actions.Player.OnJump.started += OnJumpHandler;

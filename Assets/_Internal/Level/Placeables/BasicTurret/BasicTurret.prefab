@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8872549209891918028}
   - component: {fileID: 1389501422610674783}
   - component: {fileID: 7192139528827793870}
+  - component: {fileID: 3682425643310834772}
   m_Layer: 2
   m_Name: BasicTurret
   m_TagString: Untagged
@@ -105,3 +106,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3682425643310834772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2977574475785318742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6227b7b2d24e2ff4d9daba08aa54a497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBillboardPrefab: {fileID: 5283671814339212277, guid: a68fbcc1e15c372428879d9477df48dc,
+    type: 3}
