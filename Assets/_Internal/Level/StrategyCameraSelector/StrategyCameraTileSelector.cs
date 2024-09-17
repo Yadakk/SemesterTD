@@ -10,6 +10,8 @@ public class StrategyCameraTileSelector : MonoBehaviour
     private Camera cam;
     private SelectionOutline outline;
 
+    public SelectableTile SelectedTile { get; private set; }
+
     private void Awake()
     {
         actions = new();
@@ -31,7 +33,11 @@ public class StrategyCameraTileSelector : MonoBehaviour
 
     private void OnSelectHandler(InputAction.CallbackContext context)
     {
+        if (PointerOnUI.Check()) return;
+
         var tile = ComponentRaycaster.Raycast<SelectableTile>(cam.ScreenPointToRay(Input.mousePosition));
+        SelectedTile = tile;
+
         if (tile == null)
         {
             outline.Deselect();
