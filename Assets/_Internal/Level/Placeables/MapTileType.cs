@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Flags]
-public enum PlaceableType
+public enum MapTileType
 {
     None = 0,
     Road = 1,

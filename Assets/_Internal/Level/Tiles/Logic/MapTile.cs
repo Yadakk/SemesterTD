@@ -6,13 +6,13 @@ using UnityEngine;
 public class MapTile : MonoBehaviour
 {
     [SerializeField]
-    private PlaceableType type;
+    private MapTileType type;
 
     private Collider tileCollider;
 
     private GameObject occupyingPlaceable;
 
-    public PlaceableType Type => type;
+    public MapTileType Type => type;
 
     private void Awake()
     {
@@ -24,23 +24,23 @@ public class MapTile : MonoBehaviour
         if (tileCollider == null)
             tileCollider = GetComponent<Collider>();
 
-        if (type == PlaceableType.None)
+        if (type == MapTileType.None)
         {
             Gizmos.color = Color.black;
         }
-        else if (type.HasFlag(PlaceableType.Road))
+        else if (type.HasFlag(MapTileType.Road))
         {
             Gizmos.color = Color.yellow;
         }
-        else if (type.HasFlag(PlaceableType.Slot))
+        else if (type.HasFlag(MapTileType.Slot))
         {
             Gizmos.color = Color.green;
         }
-        else if (type.HasFlag(PlaceableType.EnemySource))
+        else if (type.HasFlag(MapTileType.EnemySource))
         {
             Gizmos.color = Color.red;
         }
-        else if (type.HasFlag(PlaceableType.Tower))
+        else if (type.HasFlag(MapTileType.Tower))
         {
             Gizmos.color = Color.cyan;
         }

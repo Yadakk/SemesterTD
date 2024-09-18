@@ -45,7 +45,7 @@ public class StrategyCameraTileSelector : MonoBehaviour
             return;
         }
 
-        if (tile.Type == PlaceableType.None)
+        if (tile.Type == MapTileType.None)
         {
             outline.Deselect();
             return;

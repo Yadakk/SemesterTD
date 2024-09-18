@@ -7,7 +7,7 @@ public class LevelEntryPoint : MonoBehaviour
     [SerializeField]
     private GameObject[] maps;
 
-    private void Awake()
+    private void Start()
     {
         var mapManager = GetComponentInChildren<MapManager>();
         mapManager.SelectMap(maps[0]);
