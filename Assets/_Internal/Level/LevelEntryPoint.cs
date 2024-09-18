@@ -10,6 +10,6 @@ public class LevelEntryPoint : MonoBehaviour
     private void Awake()
     {
         var mapManager = GetComponentInChildren<MapManager>();
-        //mapManager.GenerateMap(maps)
+        mapManager.SelectMap(maps[0]);
     }
 }
