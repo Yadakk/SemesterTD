@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class UnitPathBuilderWindow : EditorWindow
@@ -76,7 +78,10 @@ public class UnitPathBuilderWindow : EditorWindow
         {
             if (go == null) continue;
             if (go.TryGetComponent<UnitPathNode>(out var _)) continue;
+
+            Undo.RegisterFullObjectHierarchyUndo(go, "Create node (GameObject)");
             UnitPathBuilder.AddNode(go);
+            PrefabUtility.RecordPrefabInstancePropertyModifications(go);
         }
     }
 
@@ -92,7 +97,9 @@ public class UnitPathBuilderWindow : EditorWindow
                 SelectedNode = null;
             }
 
+            Undo.RegisterFullObjectHierarchyUndo(go, "Remove node (GameObject)");
             UnitPathBuilder.RemoveNode(node);
+            PrefabUtility.RecordPrefabInstancePropertyModifications(go);
         }
     }
 
@@ -115,7 +122,9 @@ public class UnitPathBuilderWindow : EditorWindow
             if (!go.TryGetComponent<UnitPathNode>(out var node)) continue;
             if (SelectedNode == null) continue;
 
+            Undo.RegisterFullObjectHierarchyUndo(SelectedNode, "Connect to selected node (GameObject)");
             SelectedNode.ConnectTo(node);
+            PrefabUtility.RecordPrefabInstancePropertyModifications(SelectedNode);
         }
     }
 
