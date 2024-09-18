@@ -11,9 +11,14 @@ public class Placeable : ScriptableObject
     [SerializeField]
     private int cost;
 
+    [SerializeField]
+    private PlaceableType canPlaceOn;
+
     public GameObject Prefab => prefab;
 
     public int Cost => cost;
+
+    public PlaceableType CanPlaceOn => canPlaceOn;
 
     public bool TryBuy()
     {

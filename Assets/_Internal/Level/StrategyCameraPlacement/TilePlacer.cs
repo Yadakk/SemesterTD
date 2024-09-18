@@ -16,8 +16,8 @@ public class TilePlacer : MonoBehaviour
 
     public void Place(Placeable placeable)
     {
-        if (selector.SelectedTile is not PlaceableTile) return;
-        var placeableTile = selector.SelectedTile as PlaceableTile;
+        var placeableTile = selector.SelectedTile;
+        if (!placeable.CanPlaceOn.HasFlag(placeableTile.Type)) return;
         placeableTile.TryPlace(placeable);
     }
 }
