@@ -11,7 +11,11 @@ public class Billboard : MonoBehaviour
 
     private void Update()
     {
-        if (displayerRenderer == null) Destroy(gameObject);
+        if (displayerRenderer == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         transform.position = StrategyCamera.Camera.WorldToScreenPoint(
             displayerRenderer.transform.position +

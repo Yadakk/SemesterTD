@@ -8,6 +8,7 @@ public class TowerLocation : MonoBehaviour
     private GameObject towerPrefab;
 
     private HealthDisplayer towerHealth;
+    private new Renderer renderer;
 
     public HealthDisplayer TowerHealth => towerHealth;
 
@@ -19,6 +20,12 @@ public class TowerLocation : MonoBehaviour
 
     private void Awake()
     {
-        towerHealth = Instantiate(towerPrefab, transform).GetComponent<HealthDisplayer>();
+        renderer = GetComponent<Renderer>();
+
+        GameObject tower = Instantiate(towerPrefab, transform);
+        towerHealth = tower.GetComponent<HealthDisplayer>();
+        Renderer towerRenderer = tower.GetComponent<Renderer>();
+
+        tower.transform.position = towerRenderer.bounds.GetPositionOnTop(renderer.bounds);
     }
 }
