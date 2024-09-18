@@ -25,7 +25,7 @@ public class UnitPathNode : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.blue;
         Gizmos.DrawSphere(transform.position + Offset, 0.2f);
 
         foreach (UnitPathNode node in ConnectedNodes)

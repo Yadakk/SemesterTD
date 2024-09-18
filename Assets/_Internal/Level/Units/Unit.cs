@@ -48,8 +48,7 @@ public class Unit : MonoBehaviour
     {
         if (node.ConnectedNodes.Count == 0)
         {
-            var towerLocation = node.GetComponent<TowerLocation>();
-            var towerHealth = towerLocation.GetComponent<HealthDisplayer>();
+            var towerHealth = node.GetComponentInChildren<HealthDisplayer>();
             towerHealth.Health -= 1f;
             Destroy(gameObject);
         }
