@@ -51,10 +51,9 @@ public class StrategyCameraTileSelector : MonoBehaviour
             return;
         }
 
-        var tileRenderer = tile.GetComponent<Renderer>();
-        Vector3 tileBounds = tileRenderer.bounds.extents;
+        var tileCollider = tile.GetComponent<Collider>();
+        Vector3 tileBounds = tileCollider.bounds.extents;
         Vector2 tileWidth = new(tileBounds.x * 2, tileBounds.z * 2);
-        Vector3 tileHeight = new(0f, tileBounds.y + 0.01f, 0f);
-        outline.Select(tile.transform.position + tileHeight, tileWidth);
+        outline.Select(tile.transform.position + Vector3.up * 0.01f, tileWidth);
     }
 }
