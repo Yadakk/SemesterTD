@@ -54,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (node.ConnectedNodes.Count == 0)
         {
-            var towerHealth = node.GetComponentInChildren<HealthDisplayer>();
+            var towerHealth = node.GetComponentInChildren<MonoHealth>();
             towerHealth.Health -= 1f;
             Destroy(gameObject);
             return null;

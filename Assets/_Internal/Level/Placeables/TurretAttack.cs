@@ -10,11 +10,11 @@ public class TurretAttack : MonoBehaviour
     [SerializeField]
     private float damage = 20f;
 
-    private readonly List<HealthDisplayer> enemiesInRange = new();
+    private readonly List<MonoHealth> enemiesInRange = new();
 
     private bool readyToShoot = true;
 
-    public HealthDisplayer TargetedEnemy
+    public MonoHealth TargetedEnemy
     {
         get
         {
@@ -39,22 +39,22 @@ public class TurretAttack : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.gameObject.TryGetComponent<EnemyMovement>(out var enemyMovement)) return;
-        RegisterEnemy(enemyMovement.GetComponent<HealthDisplayer>());
+        RegisterEnemy(enemyMovement.GetComponent<MonoHealth>());
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.gameObject.TryGetComponent<EnemyMovement>(out var enemyMovement)) return;
-        UnregisterEnemy(enemyMovement.GetComponent<HealthDisplayer>());
+        UnregisterEnemy(enemyMovement.GetComponent<MonoHealth>());
     }
 
-    private void RegisterEnemy(HealthDisplayer enemy)
+    private void RegisterEnemy(MonoHealth enemy)
     {
         if (enemiesInRange.Contains(enemy)) return;
         enemiesInRange.Add(enemy);
     }
 
-    private void UnregisterEnemy(HealthDisplayer enemy)
+    private void UnregisterEnemy(MonoHealth enemy)
     {
         if (!enemiesInRange.Contains(enemy)) return;
         enemiesInRange.Remove(enemy);

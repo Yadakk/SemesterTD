@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3931964247962459015}
+  - component: {fileID: 6860634149341600700}
+  - component: {fileID: 1428471645999185068}
   - component: {fileID: 605994882575792402}
   - component: {fileID: 1222761739139312802}
   - component: {fileID: 9069638711436567237}
   - component: {fileID: 3791032054118759132}
-  - component: {fileID: 1863940995734819789}
   m_Layer: 2
   m_Name: ExampleEnemy
   m_TagString: Untagged
@@ -36,6 +37,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6860634149341600700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2180985755664588258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c3f5b1ef65bca14d8df92dd99196625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+--- !u!114 &1428471645999185068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2180985755664588258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daeed2df90766194eab6ace95448a8d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSliderPrefab: {fileID: 5283671814339212277, guid: a68fbcc1e15c372428879d9477df48dc,
+    type: 3}
 --- !u!114 &605994882575792402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,18 +150,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &1863940995734819789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2180985755664588258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6227b7b2d24e2ff4d9daba08aa54a497, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBillboardPrefab: {fileID: 5283671814339212277, guid: a68fbcc1e15c372428879d9477df48dc,
-    type: 3}
-  maxHealth: 100

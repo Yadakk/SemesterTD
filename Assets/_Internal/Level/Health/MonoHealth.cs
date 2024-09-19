@@ -1,19 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class HealthDisplayer : MonoBehaviour
+public class MonoHealth : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject healthBillboardPrefab;
-
     [SerializeField]
     private float maxHealth = 100f;
 
-    private Slider healthSlider;
-
     private float health;
+
+    public event Action<float> OnValueChanged;
+
+    public float MaxHealth => health;
 
     public float Health
     {
@@ -26,17 +25,13 @@ public class HealthDisplayer : MonoBehaviour
                 return;
             }
 
-            healthSlider.value = value / maxHealth;
-
+            if (value != health) OnValueChanged.Invoke(value);
             health = value;
         }
     }
 
     private void Start()
     {
-        var billboard = BillboardLayer.Instance.CreateBillboard(healthBillboardPrefab, transform);
-        healthSlider = billboard.GetComponentInChildren<Slider>();
-
-        Health = maxHealth;
+        health = maxHealth;
     }
 }
