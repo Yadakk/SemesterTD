@@ -2915,7 +2915,7 @@ PrefabInstance:
     - target: {fileID: 4358853121159024804, guid: ceebf1fadfe71184a83137f7e74afb20,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: Placeable, Internal
+      value: Building, Internal
       objectReference: {fileID: 0}
     - target: {fileID: 5057718785702521417, guid: ceebf1fadfe71184a83137f7e74afb20,
         type: 3}

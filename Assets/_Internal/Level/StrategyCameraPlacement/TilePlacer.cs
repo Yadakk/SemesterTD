@@ -14,7 +14,7 @@ public class TilePlacer : MonoBehaviour
         selector = GetComponent<StrategyCameraTileSelector>();
     }
 
-    public void Place(Placeable placeable)
+    public void Place(Building placeable)
     {
         var placeableTile = selector.SelectedTile;
         if (!placeable.CanPlaceOn.HasFlag(placeableTile.Type)) return;

@@ -48,7 +48,7 @@ public class MapTile : MonoBehaviour
         Gizmos.DrawCube(tileCollider.bounds.center + Vector3.up * 0.01f, tileCollider.bounds.extents * 2f);
     }
 
-    public bool TryPlace(Placeable placeable)
+    public bool TryPlace(Building placeable)
     {
         if (occupyingPlaceable != null) return false;
         if (!placeable.TryBuy()) return false;

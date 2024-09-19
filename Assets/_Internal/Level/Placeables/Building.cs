@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Placeable", menuName = "Placeable", order = 51)]
-public class Placeable : ScriptableObject
+[CreateAssetMenu(fileName = "New Building", menuName = "Building", order = 51)]
+public class Building : ScriptableObject
 {
     [SerializeField]
     private GameObject prefab;
