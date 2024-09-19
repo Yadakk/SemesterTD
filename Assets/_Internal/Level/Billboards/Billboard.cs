@@ -23,7 +23,7 @@ public class Billboard : MonoBehaviour
         }
 
         Bounds bounds = displayer.gameObject.CalculateBounds();
-        Vector3 positionOnTop = bounds.GetPositionOnTop();
+        Vector3 positionOnTop = new(displayer.position.x, bounds.GetPositionOnTop().y, displayer.position.z);
 
         transform.position = StrategyCamera.Camera.WorldToScreenPoint(positionOnTop);
         transform.localPosition += Vector3.up * screenVerticalOffset;

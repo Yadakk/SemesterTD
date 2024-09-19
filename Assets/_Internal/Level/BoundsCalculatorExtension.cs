@@ -10,8 +10,13 @@ public static class BoundsCalculatorExtension
         bool boundsSetFlag = false;
         Bounds combinedBounds = new();
 
-        Bounds[] boundsArray = go.GetComponentsInChildren<Renderer>().Select(boundsComponent => boundsComponent.bounds).ToArray();
-        boundsArray = boundsArray.Concat(go.GetComponentsInChildren<Collider>().Select(boundsComponent => boundsComponent.bounds)).ToArray();
+        Bounds[] boundsArray = go.GetComponentsInChildren<Renderer>().
+            Select(renderer => renderer.bounds).ToArray();
+
+        boundsArray = boundsArray.Concat(
+            go.GetComponentsInChildren<Collider>().
+            Where(collider => !collider.isTrigger).
+            Select(collider => collider.bounds)).ToArray();
 
         foreach (Bounds bounds in boundsArray)
         {
