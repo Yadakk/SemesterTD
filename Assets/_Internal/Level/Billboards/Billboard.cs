@@ -14,7 +14,7 @@ public class Billboard : MonoBehaviour
         UpdatePosition();
     }
 
-    private void UpdatePosition()
+    public void UpdatePosition()
     {
         if (displayer == null)
         {

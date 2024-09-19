@@ -16,6 +16,7 @@ public class BillboardLayer : MonoBehaviour
         var billboardGO = Instantiate(billboardPrefab, transform);
         var billboard = billboardGO.GetComponent<Billboard>();
         billboard.SetDisplayer(source);
+        billboard.UpdatePosition();
         return billboard;
     }
 }
