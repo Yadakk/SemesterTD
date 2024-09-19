@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+[RequireComponent(typeof(Renderer))]
+public class EnemyMovement : MonoBehaviour
 {
     [SerializeField]
     private float speed = 1f;
+
+    private Renderer _renderer;
 
     private UnitPathNode currentNode;
     private UnitPathNode targetNode;
@@ -16,6 +19,11 @@ public class Unit : MonoBehaviour
     private float nodeDistance;
 
     private float nodeProgress01;
+
+    private void Awake()
+    {
+        _renderer = GetComponent<Renderer>();
+    }
 
     private void Update()
     {
@@ -35,11 +43,8 @@ public class Unit : MonoBehaviour
         currentNode = node;
         targetNode = GetNextNode(node);
 
-        currentNodePosition = currentNode.transform.position;
-        currentNodePosition.y = transform.position.y;
-
-        targetNodePosition = targetNode.transform.position;
-        targetNodePosition.y = transform.position.y;
+        currentNodePosition = _renderer.bounds.GetPositionOnTop(currentNode.GetComponent<Collider>().bounds);
+        targetNodePosition = _renderer.bounds.GetPositionOnTop(targetNode.GetComponent<Collider>().bounds);
 
         nodeDistance = Vector3.Distance(currentNodePosition, targetNodePosition);
     }

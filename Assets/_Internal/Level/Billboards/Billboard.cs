@@ -11,6 +11,11 @@ public class Billboard : MonoBehaviour
 
     private void Update()
     {
+        UpdatePosition();
+    }
+
+    private void UpdatePosition()
+    {
         if (displayerRenderer == null)
         {
             Destroy(gameObject);

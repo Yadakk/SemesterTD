@@ -53,9 +53,11 @@ public class MapTile : MonoBehaviour
         if (occupyingPlaceable != null) return false;
         if (!placeable.TryBuy()) return false;
 
-        var placedGO = Instantiate(placeable.Prefab, transform.position, transform.rotation, transform);
-        var placeableCollider = placedGO.GetComponent<Collider>();
-        placedGO.transform.position = placeableCollider.bounds.GetPositionOnTop(tileCollider.bounds);
+        var placedGO = Instantiate(placeable.Prefab, transform);
+        placedGO.transform.localScale = placedGO.transform.localScale.InverseScale(transform.localScale);
+
+        var placedRenderer = placedGO.GetComponent<Renderer>();
+        placedGO.transform.position = placedRenderer.bounds.GetPositionOnTop(tileCollider.bounds);
 
         occupyingPlaceable = placedGO;
         return true;
