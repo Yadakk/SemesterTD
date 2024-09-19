@@ -33,6 +33,7 @@ public class TurretAttack : MonoBehaviour
     private void Update()
     {
         if (enemiesInRange.Count == 0) return;
+        if (TargetedEnemy == null) return;
 
         RotateTowardEnemy();
         if (readyToShoot) ShootAtEnemy();
