@@ -4,6 +4,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
+#if UNITY_EDITOR
 public class UnitPathBuilderWindow : EditorWindow
 {
     private Label selectedLabel;
@@ -131,3 +133,4 @@ public class UnitPathBuilderWindow : EditorWindow
         selectedLabel.text = "Selected node: " + text;
     }
 }
+#endif
