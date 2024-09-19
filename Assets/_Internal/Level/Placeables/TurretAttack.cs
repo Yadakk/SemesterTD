@@ -18,12 +18,14 @@ public class TurretAttack : MonoBehaviour
     {
         get
         {
+            if (enemiesInRange.Count == 0) return null;
+
             while (enemiesInRange[0] == null)
             {
                 enemiesInRange.RemoveAt(0);
+                if (enemiesInRange.Count == 0) return null;
             }
 
-            if (enemiesInRange.Count == 0) return null;
             return enemiesInRange[0];
         }
     }
