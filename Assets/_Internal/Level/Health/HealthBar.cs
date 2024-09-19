@@ -30,6 +30,6 @@ public class HealthBar : MonoBehaviour
 
     private void UpdateHealthBar(float newValue)
     {
-         healthSlider.value = newValue / monoHealth.MaxHealth;
+        healthSlider.value = newValue / monoHealth.MaxHealth;
     }
 }

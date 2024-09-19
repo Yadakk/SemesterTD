@@ -12,7 +12,7 @@ public class MonoHealth : MonoBehaviour
 
     public event Action<float> OnValueChanged;
 
-    public float MaxHealth => health;
+    public float MaxHealth => maxHealth;
 
     public float Health
     {
