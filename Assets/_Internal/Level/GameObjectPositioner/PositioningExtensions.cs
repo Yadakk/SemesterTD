@@ -11,4 +11,11 @@ public static class PositioningExtensions
         positionOnTop.y += thisBounds.extents.y;
         return positionOnTop;
     }
+
+    public static Vector3 GetPositionOnTop(this Bounds targetBounds)
+    {
+        Vector3 positionOnTop;
+        positionOnTop = new(targetBounds.center.x, targetBounds.max.y, targetBounds.center.z);
+        return positionOnTop;
+    }
 }

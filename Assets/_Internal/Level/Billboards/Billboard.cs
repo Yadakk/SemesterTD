@@ -7,7 +7,7 @@ public class Billboard : MonoBehaviour
     [SerializeField]
     private float screenVerticalOffset = 5f;
 
-    private Renderer displayerRenderer;
+    private Transform displayer;
 
     private void Update()
     {
@@ -16,21 +16,21 @@ public class Billboard : MonoBehaviour
 
     private void UpdatePosition()
     {
-        if (displayerRenderer == null)
+        if (displayer == null)
         {
             Destroy(gameObject);
             return;
         }
 
-        transform.position = StrategyCamera.Camera.WorldToScreenPoint(
-            displayerRenderer.transform.position +
-            Vector3.Scale(displayerRenderer.bounds.extents, Vector3.up));
+        Bounds bounds = displayer.gameObject.CalculateBounds();
+        Vector3 positionOnTop = bounds.GetPositionOnTop();
 
+        transform.position = StrategyCamera.Camera.WorldToScreenPoint(positionOnTop);
         transform.localPosition += Vector3.up * screenVerticalOffset;
     }
 
-    public void SetDisplayer(Renderer renderer)
+    public void SetDisplayer(Transform displayer)
     {
-        displayerRenderer = renderer;
+        this.displayer = displayer;
     }
 }

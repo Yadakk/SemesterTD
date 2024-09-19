@@ -11,8 +11,6 @@ public class HealthDisplayer : MonoBehaviour
     [SerializeField]
     private float maxHealth = 100f;
 
-    private Renderer _renderer;
-
     private Slider healthSlider;
 
     private float health;
@@ -22,19 +20,21 @@ public class HealthDisplayer : MonoBehaviour
         get => health;
         set
         {
+            if (value <= 0)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
             healthSlider.value = value / maxHealth;
+
             health = value;
         }
     }
 
-    private void Awake()
-    {
-        _renderer = GetComponent<Renderer>();
-    }
-
     private void Start()
     {
-        var billboard = BillboardLayer.Instance.CreateBillboard(healthBillboardPrefab, _renderer);
+        var billboard = BillboardLayer.Instance.CreateBillboard(healthBillboardPrefab, transform);
         healthSlider = billboard.GetComponentInChildren<Slider>();
 
         Health = maxHealth;

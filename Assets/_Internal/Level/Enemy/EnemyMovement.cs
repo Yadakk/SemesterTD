@@ -42,6 +42,7 @@ public class EnemyMovement : MonoBehaviour
 
         currentNode = node;
         targetNode = GetNextNode(node);
+        if (targetNode == null) return;
 
         currentNodePosition = _renderer.bounds.GetPositionOnTop(currentNode.GetComponent<Collider>().bounds);
         targetNodePosition = _renderer.bounds.GetPositionOnTop(targetNode.GetComponent<Collider>().bounds);
@@ -56,6 +57,7 @@ public class EnemyMovement : MonoBehaviour
             var towerHealth = node.GetComponentInChildren<HealthDisplayer>();
             towerHealth.Health -= 1f;
             Destroy(gameObject);
+            return null;
         }
 
         return node.ConnectedNodes[Random.Range(0, node.ConnectedNodes.Count)];

@@ -56,8 +56,21 @@ public class MapTile : MonoBehaviour
         var placedGO = Instantiate(placeable.Prefab, transform);
         placedGO.transform.localScale = placedGO.transform.localScale.InverseScale(transform.localScale);
 
-        var placedRenderer = placedGO.GetComponent<Renderer>();
-        placedGO.transform.position = placedRenderer.bounds.GetPositionOnTop(tileCollider.bounds);
+        bool boundsSetFlag = false;
+        Bounds combinedBounds = new();
+        Renderer[] renderers = placedGO.GetComponentsInChildren<Renderer>();
+        foreach (Renderer renderer in renderers)
+        {
+            if (!boundsSetFlag)
+            {
+                combinedBounds = renderer.bounds;
+                boundsSetFlag = true;
+            }
+
+            combinedBounds.Encapsulate(renderer.bounds);
+        }
+
+        placedGO.transform.position = combinedBounds.GetPositionOnTop(tileCollider.bounds);
 
         occupyingPlaceable = placedGO;
         return true;

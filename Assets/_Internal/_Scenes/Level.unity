@@ -698,6 +698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c79be01fcb1a948b71a0c5045b81a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 2929860898602128821, guid: 54a2f565058a33d44a043ed432496cbd,
+    type: 3}
 --- !u!1 &268628670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2607,7 +2609,7 @@ PrefabInstance:
     - target: {fileID: 4281798485858105490, guid: db1008a2a569ae941942afa5104f1180,
         type: 3}
       propertyPath: m_Name
-      value: SuperSuit
+      value: SuperSuitButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

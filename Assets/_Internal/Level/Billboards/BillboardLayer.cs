@@ -11,11 +11,11 @@ public class BillboardLayer : MonoBehaviour
         Instance = this;
     }
 
-    public Billboard CreateBillboard(GameObject prefab, Renderer renderer)
+    public Billboard CreateBillboard(GameObject billboardPrefab, Transform source)
     {
-        var billboardGO = Instantiate(prefab, transform);
+        var billboardGO = Instantiate(billboardPrefab, transform);
         var billboard = billboardGO.GetComponent<Billboard>();
-        billboard.SetDisplayer(renderer);
+        billboard.SetDisplayer(source);
         return billboard;
     }
 }
